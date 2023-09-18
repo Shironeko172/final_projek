@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-color: #000000;
+    font-family: 'Doppio One', sans-serif;
+    animation: drop 1s ease-in-out forwards;
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(-1%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    background-color: #000000;
+    width: auto;
+    height: 78px;
+    box-shadow: 0px 3px 4px 0px #C70039;
+    z-index: 9;
+    padding: 0px 30px 0px;
+}
+
+.logo {
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: -10px;
+    font-family: Inter;
+}
+
+@font-face {
+    font-family: urw;
+    src: url(../fonts/URW\ DIN\ Arabic\ Medium.ttf);
+}
