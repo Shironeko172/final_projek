@@ -26,13 +26,9 @@ body {
     padding: 0px 30px 0px;
 }
 
-.logo {
-    font-size: 43px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: -10px;
-    font-family: Inter;
+.logo{
+    width: auto;
+    height: 60px;
 }
 
 @font-face {

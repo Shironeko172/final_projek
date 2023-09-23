@@ -2,7 +2,7 @@
     .footer {
         background-color: #2A63E0;
         width: auto;
-        height: 180px;
+        height: 200px;
         padding: 0px 100px 0px;
         font-family: inter;
     }
@@ -25,7 +25,7 @@
             <div class="col-lg-4">
                 <div class="row pertama">
                     <div class="col-lg-12">
-                        <div class="logo">Logo</div>
+                        <img src="<?= base_url('media/logo.png') ?>" class="logo" alt="logo">
                     </div>
                 </div>
             </div>
@@ -42,13 +42,6 @@
                     </div>
                     <div class="col-lg-12">
                         <a href="https://www.instagram.com/llen_172/" target="_blank" style="text-decoration: none; color: #ffffff;"><i class="bi bi-instagram"></i> Instagram GWEH</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="row ketiga">
-                    <div class="col-lg-12">
-                        Oke gitu ajah sih wir
                     </div>
                 </div>
             </div>
