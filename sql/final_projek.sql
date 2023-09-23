@@ -1,34 +1,16 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Waktu pembuatan: 18 Sep 2023 pada 13.36
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 8.1.6
-
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `final_projek`
---
 
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `data`
---
-
-CREATE TABLE `data` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `data`;
+CREATE TABLE IF NOT EXISTS `data` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `merek` varchar(255) NOT NULL,
   `model` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
@@ -60,12 +42,10 @@ CREATE TABLE `data` (
   `bluetooth` varchar(255) NOT NULL,
   `diupgrade` varchar(255) NOT NULL,
   `diperluas` varchar(255) NOT NULL,
-  `usbmemory` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `data`
---
+  `usbmemory` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `merek` (`merek`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `data` (`id`, `merek`, `model`, `deskripsi`, `gambar_url`, `gmbr`, `rilis`, `progres`, `ukuran`, `berat`, `kapasitas`, `tipe`, `bandwidth`, `cd`, `cores`, `threads`, `clock_speed`, `RayTracing`, `cores_gpu`, `threads_gpu`, `clock_speed_gpu`, `ram`, `ports`, `port2`, `port3`, `port4`, `power`, `ethernet`, `wifi`, `bluetooth`, `diupgrade`, `diperluas`, `usbmemory`) VALUES
 (1, 'PLAYSTATION', 'Playstation 1', 'PlayStation[a] (disingkat PS, umumnya dikenal sebagai PS1/PS one atau nama kodenya PSX) adalah konsol permainan video rumah yang dikembangkan dan dipasarkan oleh Sony Computer Entertainment. Ini dirilis di Jepang pada 3 Desember 1994, di Amerika Utara pada 9 September 1995, di Eropa pada 29 September 1995, dan di Australia pada 15 November 1995. Sebagai generasi kelima konsol, PlayStation terutama bersaing dengan Nintendo 64 dan Sega Saturn.', 'media/Playstation/ps1.jpg', 'media/Playstation/ps1-banner.jpg', 'December 1994', 'Maret 2006', '275 mm × 63.5 mm × 190 mm', '1.5 kg', '128 KB', 'Memory Cards', '—', 'Yes', '1 Core', '?', '33.9 MHz', 'No', '?', '?', '53 MHz', '2 Mb RAM', '1x Serial I/O ', '1x Parallel I/O (excluding SCPH 900x)', NULL, NULL, '15 W', '-', '-', '-', '-', 'Memory Cards', '-'),
@@ -78,70 +58,23 @@ INSERT INTO `data` (`id`, `merek`, `model`, `deskripsi`, `gambar_url`, `gmbr`, `
 (8, 'XBOX', 'XBOX Series S', 'Xbox Series X dan Series S (nama gabungannya adalah Xbox Series X/S[a]) adalah konsol permainan video mendatang yang dikembangkan oleh Microsoft. Kedua konsol dirilis pada 10 November 2020 sebagai generasi keempat dari konsol Xbox, sebagai penerus dari Xbox One.', 'media/Xbox/xboxs.jpg', 'media/Xbox/xboxs-banner.jpg', 'November 2020', 'Dalam Produksi', '275 mm × 151 mm × 65 mm', '1,93 kg', '1 Tb', 'NVME SSD', '2.4 GB/s raw, 4.8 GB/s compressed', 'No', '8 Core', '?', '3.4 GHz', 'Yes', '20 CUs', '?', '1.565 GHz', '10 GB GDDR6', NULL, NULL, NULL, NULL, '74 W', 'Gigabit Ethernet', '?', '?', '?', 'Kartu ekspansi 1-2 TB', 'Dukungan HDD eksternal USB 3.1'),
 (9, 'NINTENDO', 'Nintendo Switch', 'Nintendo Switch (ニンテンドースイッチ, Nintendō Suitchi) adalah konsol video game yang dirilis perusahaan Nintendo pada 3 Maret 2017. Konsol ini juga dikenal dengan codename NX pada pengembangannya. Konsol ini dijual seharga ¥32,023.87 pada tanggal perilisannya', 'media/Nintendo/nintendo.png', 'media/Nintendo/nintendo-banner.jpg', 'Maret 2017', '?', '4 inches high, 9.5 inches long, and 0.55 inches deep', '.71 lbs', '64 Gb', 'Micro Sd', '?', 'No', '?', '?', '?', '?', '?', '?', '?', '?', 'USB Type-C', '3.5mm 4-pole stereo ', 'Nintendo Switch game cards', 'Up To 1080p HDMI', ' 6 W TV Mode / 4 W Handled Mode', 'No', 'Wi-Fi IEEE 802.11', '4.1', 'No', 'microSDXC Up To 2 Tb', 'No');
 
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `data_model`
---
-
-CREATE TABLE `data_model` (
-  `id` int(11) NOT NULL,
-  `merek` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `data_model`
---
+DROP TABLE IF EXISTS `data_model`;
+CREATE TABLE IF NOT EXISTS `data_model` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `merek` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `merek` (`merek`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `data_model` (`id`, `merek`) VALUES
 (3, 'NINTENDO'),
 (1, 'PLAYSTATION'),
 (2, 'XBOX');
 
---
--- Indexes for dumped tables
---
 
---
--- Indeks untuk tabel `data`
---
-ALTER TABLE `data`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `merek` (`merek`);
-
---
--- Indeks untuk tabel `data_model`
---
-ALTER TABLE `data_model`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `merek` (`merek`);
-
---
--- AUTO_INCREMENT untuk tabel yang dibuang
---
-
---
--- AUTO_INCREMENT untuk tabel `data`
---
-ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT untuk tabel `data_model`
---
-ALTER TABLE `data_model`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `data`
---
 ALTER TABLE `data`
   ADD CONSTRAINT `data_ibfk_1` FOREIGN KEY (`merek`) REFERENCES `data_model` (`merek`);
-COMMIT;
+SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
