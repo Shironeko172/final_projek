@@ -1,5 +1,5 @@
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -7,11 +7,13 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+CREATE DATABASE IF NOT EXISTS `final_projek` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `final_projek`;
 
 DROP TABLE IF EXISTS `data`;
-CREATE TABLE IF NOT EXISTS `data` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `merek` varchar(255) NOT NULL,
+CREATE TABLE `data` (
+  `id` int(11) NOT NULL,
+  `merek` varchar(15) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `model` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
   `gambar_url` varchar(1000) NOT NULL,
@@ -42,9 +44,7 @@ CREATE TABLE IF NOT EXISTS `data` (
   `bluetooth` varchar(255) NOT NULL,
   `diupgrade` varchar(255) NOT NULL,
   `diperluas` varchar(255) NOT NULL,
-  `usbmemory` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `merek` (`merek`)
+  `usbmemory` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `data` (`id`, `merek`, `model`, `deskripsi`, `gambar_url`, `gmbr`, `rilis`, `progres`, `ukuran`, `berat`, `kapasitas`, `tipe`, `bandwidth`, `cd`, `cores`, `threads`, `clock_speed`, `RayTracing`, `cores_gpu`, `threads_gpu`, `clock_speed_gpu`, `ram`, `ports`, `port2`, `port3`, `port4`, `power`, `ethernet`, `wifi`, `bluetooth`, `diupgrade`, `diperluas`, `usbmemory`) VALUES
@@ -59,11 +59,9 @@ INSERT INTO `data` (`id`, `merek`, `model`, `deskripsi`, `gambar_url`, `gmbr`, `
 (9, 'NINTENDO', 'Nintendo Switch', 'Nintendo Switch (ニンテンドースイッチ, Nintendō Suitchi) adalah konsol video game yang dirilis perusahaan Nintendo pada 3 Maret 2017. Konsol ini juga dikenal dengan codename NX pada pengembangannya. Konsol ini dijual seharga ¥32,023.87 pada tanggal perilisannya', 'media/Nintendo/nintendo.png', 'media/Nintendo/nintendo-banner.jpg', 'Maret 2017', '?', '4 inches high, 9.5 inches long, and 0.55 inches deep', '.71 lbs', '64 Gb', 'Micro Sd', '?', 'No', '?', '?', '?', '?', '?', '?', '?', '?', 'USB Type-C', '3.5mm 4-pole stereo ', 'Nintendo Switch game cards', 'Up To 1080p HDMI', ' 6 W TV Mode / 4 W Handled Mode', 'No', 'Wi-Fi IEEE 802.11', '4.1', 'No', 'microSDXC Up To 2 Tb', 'No');
 
 DROP TABLE IF EXISTS `data_model`;
-CREATE TABLE IF NOT EXISTS `data_model` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `merek` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `merek` (`merek`)
+CREATE TABLE `data_model` (
+  `id` int(11) NOT NULL,
+  `merek` varchar(15) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `data_model` (`id`, `merek`) VALUES
@@ -73,8 +71,24 @@ INSERT INTO `data_model` (`id`, `merek`) VALUES
 
 
 ALTER TABLE `data`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `merek` (`merek`);
+
+ALTER TABLE `data_model`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `merek` (`merek`);
+
+
+ALTER TABLE `data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `data_model`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `data`
   ADD CONSTRAINT `data_ibfk_1` FOREIGN KEY (`merek`) REFERENCES `data_model` (`merek`);
-SET FOREIGN_KEY_CHECKS=1;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
