@@ -89,7 +89,7 @@
 </style>
 <div class="section">
     <h1 class="text">SELAMAT DATANG</h1>
-    <h2 class="text disini">DISINI</h2>
+    <h2 class="text disini">INFINITE</h2>
 </div>
 <div class="container mt-4">
     <div class="filter-container">
