@@ -11,11 +11,5 @@
     <?php $this->getThemeElement('page/html/footer', $__forward) ?>
 
     <!-- Load and execute javascript code used only in this page -->
-    <script>
-      $(document).ready(function(e){
-        <?php $this->getJsReady(); ?>
-      });
-      <?php $this->getJsContent(); ?>
-    </script>
   </body>
 </html>
