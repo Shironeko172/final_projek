@@ -5,5 +5,5 @@
     }
 </style>
 <div class="navbar">
-    <a href="<?= base_url('home') ?>" class="logo" style="color: #000000; text-decoration: none;" ><img src="<?= base_url('media/logo-dark.png') ?>" class="logo" alt="logo"></a>
+    <a href="<?= base_url('home') ?>" style="color: #000000; text-decoration: none;" ><img src="<?= base_url('media/Logo-dark.png') ?>" class="logo" alt="logo"></a>
 </div>

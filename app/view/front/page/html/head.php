@@ -9,6 +9,8 @@
   <meta name="author" content="<?=$this->getAuthor()?>">
   <meta name="robots" content="<?=$this->getRobots()?>" />
 
+  <link rel="icon" href="<?= base_url('media/Logo.png') ?>">
+
   <?php $this->getAdditionalBefore()?>
   <?php $this->getAdditional()?>
   <?php $this->getAdditionalAfter()?>

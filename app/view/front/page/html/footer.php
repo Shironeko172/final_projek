@@ -25,7 +25,7 @@
             <div class="col-lg-4">
                 <div class="row pertama">
                     <div class="col-lg-12">
-                        <img src="<?= base_url('media/logo.png') ?>" class="logo" alt="logo">
+                        <img src="<?= base_url('media/Logo.png') ?>" class="logo" alt="logo">
                     </div>
                 </div>
             </div>
