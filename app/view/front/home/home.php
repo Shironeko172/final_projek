@@ -30,7 +30,7 @@
     }
 
     .content {
-        width: 500px;
+        width: auto;
         height: 322px;
         box-shadow: 4px 4px 4px 0px #2A63E0;
         animation: jatuh 1s ease-in-out forwards;
@@ -48,6 +48,12 @@
 
     .content:hover {
         box-shadow: 8px 8px 8px 0px #2A63E0;
+    }
+
+    @media only screen and (min-width: 100px) and (max-width: 600px) {
+        .content{
+            width: inherit;
+        }
     }
 
     .img-content {
@@ -111,7 +117,7 @@
     <div class="row">
         <?php foreach ($thedata as $tda) { ?>
             <div class="col-lg-6 d-flex justify-content-center">
-                <a href="<?= base_url('detail/isidata/')?><?= $tda->id ?>" class="content item <?= $tda->merek ?>" style="text-decoration: none">
+                <a href="<?= base_url('detail/isidata/') ?><?= $tda->id ?>" class="content item <?= $tda->merek ?>" style="text-decoration: none">
                     <img src="<?= base_url($tda->gmbr) ?>" class="img-content" />
                     <div class="judul-content d-flex justify-content-center pt-2"><?= $tda->model ?></div>
                 </a>

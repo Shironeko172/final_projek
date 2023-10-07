@@ -11,7 +11,7 @@ class Detail extends SENE_Controller
     public function index()
     {
         $data = array();
-        $this->setTitle('Final Projek');
+        $this->setTitle('Infinite');
         $this->setDescription("Congratulation, you have done well.");
         $this->setKeyword('Seme Framework');
         $this->setAuthor('Seme Framework');

@@ -2,7 +2,7 @@
     .footer {
         background-color: #2A63E0;
         width: auto;
-        height: 200px;
+        height: auto;
         padding: 0px 100px 0px;
         font-family: inter;
     }

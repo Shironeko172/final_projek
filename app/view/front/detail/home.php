@@ -298,140 +298,108 @@
 <div class="container-fluid" style="margin-top: -15px;">
     <div class="thecard">
         <div class="row mt-1">
-            <div class="col-lg-5">
+            <div class="col-lg-12 mt-3 d-flex justify-content-center">
                 <div class="thefoto"></div>
             </div>
-            <div class="col-lg-7 d-flex justify-content-center">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <?php foreach ($hh as $dta) { ?>
-                            <h1 class="thejudul d-flex justify-content-center"><?= $dta->model ?></h1>
-                            <marquee class="garis" direction="left" scrollamount="10"><?= $dta->deskripsi ?></marquee>
-                        <?php } ?>
-                        <table class="table1">
-                            <?php foreach ($hh as $dta) { ?>
-                                <tr>
-                                    <td class="tabel1">Tanggal Rilis</td>
-                                    <td class="tabel1">:</td>
-                                    <td class="tabel1"><?= $dta->rilis ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="tabel1">Diteruskan</td>
-                                    <td class="tabel1">:</td>
-                                    <td class="tabel1"><?= $dta->progres ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="tabel1">Dimensi</td>
-                                    <td class="tabel1">:</td>
-                                    <td class="tabel1"><?= $dta->ukuran ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="tabel1">Berat</td>
-                                    <td class="tabel1">:</td>
-                                    <td class="tabel1"><?= $dta->berat ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="tabel1">Kapasitas Penyimpanan</td>
-                                    <td class="tabel1">:</td>
-                                    <td class="tabel1"><?= $dta->kapasitas ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="tabel1">Tipe Penyimpanan</td>
-                                    <td class="tabel1">:</td>
-                                    <td class="tabel1"><?= $dta->tipe ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="tabel1">Bandwidth Penyimpanan</td>
-                                    <td class="tabel1">:</td>
-                                    <td class="tabel1"><?= $dta->bandwidth ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="tabel1">Disc Slot</td>
-                                    <td class="tabel1">:</td>
-                                    <td class="tabel1"><?= $dta->cd ?></td>
-                                </tr>
-                            <?php } ?>
-                        </table>
-                    </div>
-                </div>
+            <div class="col-lg-12 mt-3 d-flex justify-content-center">
+                <?php foreach ($hh as $dta) { ?>
+                    <h1 class="thejudul"><?= $dta->model ?></h1>
+                <?php } ?>
             </div>
-            <div class="col-lg-12">
-                <table style="margin-left: 18px;">
-                    <?php foreach ($hh as $dta) { ?>
-                        <tr>
-                            <td>Core CPU</td>
-                            <td>:</td>
-                            <td><?= $dta->cores ?></td>
-                            <td>Threads CPU</td>
-                            <td>:</td>
-                            <td><?= $dta->threads ?></td>
-                        </tr>
-                        <tr>
-                            <td>Clock Speed CPU</td>
-                            <td>:</td>
-                            <td><?= $dta->clock_speed ?></td>
-                            <td>Core GPU</td>
-                            <td>:</td>
-                            <td><?= $dta->cores_gpu ?></td>
-                        </tr>
-                        <tr>
-                            <td>Threads GPU</td>
-                            <td>:</td>
-                            <td><?= $dta->threads_gpu ?></td>
-                            <td>Clock speed GPU</td>
-                            <td>:</td>
-                            <td><?= $dta->clock_speed_gpu ?></td>
-                        </tr>
-                        <tr>
-                            <td>Ray Tracing</td>
-                            <td>:</td>
-                            <td><?= $dta->RayTracing ?></td>
-                            <td>Memori</td>
-                            <td>:</td>
-                            <td><?= $dta->ram ?></td>
-                        </tr>
-                        <tr>
-                            <td>Ports</td>
-                            <td>:</td>
-                            <td>
-                                <?= $dta->ports ?> <br>
-                                <?= $dta->port2 ?>
-                            </td>
-                            <td>
-                                <?= $dta->port3 ?> <br>
-                                <?= $dta->port4 ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Power Supply</td>
-                            <td>:</td>
-                            <td><?= $dta->power ?></td>
-                        </tr>
-                        <tr>
-                            <td>Jaringan</td>
-                            <td>:</td>
-                            <td>
-                                <?= $dta->ethernet ?> <br>
-                                <?= $dta->wifi ?>
-                            </td>
-                            <td>
-                                <?= $dta->bluetooth ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Penyimpanan Upgrade</td>
-                            <td>:</td>
-                            <td><?= $dta->diupgrade ?></td>
-                            <td>Perluas Penyimpanan</td>
-                            <td>:</td>
-                            <td><?= $dta->diperluas ?></td>
-                        </tr>
-                        <tr>
-                            <td>Penyimpanan Usb</td>
-                            <td>:</td>
-                            <td colspan="4"><?= $dta->usbmemory ?></td>
-                        </tr>
-                    <?php } ?>
+            <div class="col-lg-12 mt-3 d-flex justify-content-center">
+                <?php foreach ($hh as $dta) { ?>
+                    <marquee class="garis" direction="left" scrollamount="10"><?= $dta->deskripsi ?></marquee>
+                <?php } ?>
+            </div>
+            <div class="col-lg-12 mt-3" style="overflow-x:auto;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td>Tanggal Rilis</td>
+                        <td>:</td>
+                        <td><?= $dta->rilis ?></td>
+                        <td>Diteruskan</td>
+                        <td>:</td>
+                        <td><?= $dta->progres ?></td>
+                    </tr>
+                    <tr>
+                        <td>Berat</td>
+                        <td>:</td>
+                        <td><?= $dta->berat ?></td>
+                        <td>Kapasitas Penyimpanan</td>
+                        <td>:</td>
+                        <td><?= $dta->kapasitas ?></td>
+                    </tr>
+                    <tr>
+                        <td>Tipe Penyimpanan</td>
+                        <td>:</td>
+                        <td><?= $dta->tipe ?></td>
+                        <td>Bandwidth Penyimpanan</td>
+                        <td>:</td>
+                        <td><?= $dta->bandwidth ?></td>
+                    </tr>
+                    <tr>
+                        <td>Disc Slot</td>
+                        <td>:</td>
+                        <td><?= $dta->cd ?></td>
+                        <td>Core CPU</td>
+                        <td>:</td>
+                        <td><?= $dta->cores ?></td>
+                    </tr>
+                    <tr>
+                        <td>Threads CPU</td>
+                        <td>:</td>
+                        <td><?= $dta->threads ?></td>
+                        <td>Clock Speed CPU</td>
+                        <td>:</td>
+                        <td><?= $dta->clock_speed ?></td>
+                    </tr>
+                    <tr>
+                        <td>Core GPU</td>
+                        <td>:</td>
+                        <td><?= $dta->cores_gpu ?></td>
+                        <td>Threads GPU</td>
+                        <td>:</td>
+                        <td><?= $dta->threads_gpu ?></td>
+                    </tr>
+                    <tr>
+                        <td>Clock speed GPU</td>
+                        <td>:</td>
+                        <td><?= $dta->clock_speed_gpu ?></td>
+                        <td>Ray Tracing</td>
+                        <td>:</td>
+                        <td><?= $dta->RayTracing ?></td>
+                    </tr>
+                    <tr>
+                        <td>Memori</td>
+                        <td>:</td>
+                        <td><?= $dta->ram ?></td>
+                        <td>Power Supply</td>
+                        <td>:</td>
+                        <td><?= $dta->power ?></td>
+                    </tr>
+                    <tr>
+                        <td>Ports</td>
+                        <td>:</td>
+                        <td colspan="3"><?= $dta->ports ?>, <?= $dta->port2 ?>, <?= $dta->port3 ?>, <?= $dta->port4 ?></td>
+                    </tr>
+                    <tr>
+                        <td>Jaringan</td>
+                        <td>:</td>
+                        <td><?= $dta->ethernet ?>, <?= $dta->wifi ?>, <?= $dta->bluetooth ?></td>
+                    </tr>
+                    <tr>
+                        <td>Penyimpanan Di Upgrade</td>
+                        <td>:</td>
+                        <td><?= $dta->diupgrade ?></td>
+                        <td>Perluas Penyimpanan</td>
+                        <td>:</td>
+                        <td><?= $dta->diperluas ?></td>
+                    </tr>
+                    <tr>
+                        <td>Penyimpanan Usb</td>
+                        <td>:</td>
+                        <td colspan="3"><?= $dta->usbmemory ?></td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -444,14 +412,14 @@
         <div class="col-lg-1"><a href="<?= base_url('home') ?>" class="btn btn-outline-light"><i class="bi bi-arrow-left"></i> Back</a></div>
         <div class="col-lg-11">
             <?php foreach ($gg as $ggg) { ?>
-                <a href="<?= base_url('detail/isidata/')?><?= $ggg->id ?>" class="playstation btn"><?= $ggg->model ?></a>
+                <a href="<?= base_url('detail/isidata/') ?><?= $ggg->id ?>" class="playstation btn"><?= $ggg->model ?></a>
             <?php }
             foreach ($ss as $sss) { ?>
-                <a href="<?= base_url('detail/isidata/')?><?= $sss->id ?>" class="xbox btn"><?= $sss->model ?></a>
+                <a href="<?= base_url('detail/isidata/') ?><?= $sss->id ?>" class="xbox btn"><?= $sss->model ?></a>
             <?php }
             foreach ($dd as $ddd) { ?>
-                <a href="<?= base_url('detail/isidata/')?><?= $ddd->id ?>" class="nintendo btn"><?= $ddd->model ?></a>
-            <?php } ?> 
+                <a href="<?= base_url('detail/isidata/') ?><?= $ddd->id ?>" class="nintendo btn"><?= $ddd->model ?></a>
+            <?php } ?>
         </div>
     </div>
 </div>

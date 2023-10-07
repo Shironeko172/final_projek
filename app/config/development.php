@@ -16,7 +16,7 @@
  * Site Base URL with http:// or https:// prefix and trailing slash
  * @var string
  */
-$site = "http://".$_SERVER['HTTP_HOST']."/final_projek/";
+$site = "http://".$_SERVER['HTTP_HOST']."/infinite/";
 /**
  * URL parse method
  *   - REQUEST_URI, suitable for Nginx
